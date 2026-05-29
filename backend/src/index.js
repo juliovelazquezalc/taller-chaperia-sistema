@@ -1,7 +1,10 @@
- const express = require('express');
+const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 const db = require('./db');
+
+// Importar rutas
+const clientesRoutes = require('./routes/clientes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -9,6 +12,9 @@ const PORT = process.env.PORT || 3001;
 // Middlewares
 app.use(cors());
 app.use(express.json());
+
+// Usar rutas
+app.use('/clientes', clientesRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
