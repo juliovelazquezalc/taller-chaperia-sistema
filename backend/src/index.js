@@ -6,6 +6,7 @@ const db = require('./db');
 // Importar rutas
 const clientesRoutes = require('./routes/clientes');
 const vehiculosRoutes = require('./routes/vehiculos');
+const empleadosRoutes = require('./routes/empleados');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -17,6 +18,7 @@ app.use(express.json());
 // Usar rutas
 app.use('/clientes', clientesRoutes);
 app.use('/vehiculos', vehiculosRoutes);
+app.use('/empleados', empleadosRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
