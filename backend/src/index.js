@@ -8,6 +8,7 @@ const clientesRoutes = require('./routes/clientes');
 const vehiculosRoutes = require('./routes/vehiculos');
 const empleadosRoutes = require('./routes/empleados');
 const ordenesRoutes = require('./routes/ordenes');
+const articulosRoutes = require('./routes/articulos');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -21,6 +22,7 @@ app.use('/clientes', clientesRoutes);
 app.use('/vehiculos', vehiculosRoutes);
 app.use('/empleados', empleadosRoutes);
 app.use('/ordenes', ordenesRoutes);
+app.use('/articulos', articulosRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
