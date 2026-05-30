@@ -3,6 +3,9 @@ import Navbar from './components/Navbar'
 import Clientes from './pages/Clientes'
 import Vehiculos from './pages/Vehiculos'
 import Empleados from './pages/Empleados'
+import Ordenes from './pages/Ordenes'
+import Articulos from './pages/Articulos'
+import Facturas from './pages/Facturas'
 import './App.css'
 
 function App() {
@@ -15,6 +18,9 @@ function App() {
           <Route path="/clientes" element={<Clientes />} />
           <Route path="/vehiculos" element={<Vehiculos />} />
           <Route path="/empleados" element={<Empleados />} />
+          <Route path="/ordenes" element={<Ordenes />} />
+          <Route path="/articulos" element={<Articulos />} />
+          <Route path="/facturas" element={<Facturas />} />
         </Routes>
       </div>
     </BrowserRouter>
