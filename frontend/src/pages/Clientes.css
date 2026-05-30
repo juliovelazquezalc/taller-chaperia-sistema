@@ -1,0 +1,80 @@
+.pagina {
+  padding: 2rem;
+}
+
+.pagina h1 {
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.formulario {
+  background: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 500px;
+}
+
+.formulario h2 {
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.formulario input {
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+
+.formulario button {
+  padding: 0.7rem;
+  background-color: #e94560;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background-color: #c73652;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla th {
+  background-color: #1a1a2e;
+  color: white;
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.tabla td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla tr:hover {
+  background-color: #f5f5f5;
+}
+
+.btn-eliminar {
+  padding: 0.4rem 0.8rem;
+  background-color: #e94560;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background-color: #c73652;
+}
