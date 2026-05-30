@@ -15,10 +15,10 @@ router.get('/', async (req, res) => {
 // POST /empleados - crear un empleado nuevo
 router.post('/', async (req, res) => {
   try {
-    const { nombre, rol, telefono, email, turno } = req.body;
+    const { nombre, rol, telefono, email, turno, cedula } = req.body;
     const resultado = await db.query(
-      'INSERT INTO empleados (nombre, rol, telefono, email, turno) VALUES ($1, $2, $3, $4, $5) RETURNING *',
-      [nombre, rol, telefono, email, turno]
+      'INSERT INTO empleados (nombre, rol, telefono, email, turno, cedula) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
+      [nombre, rol, telefono, email, turno, cedula]
     );
     res.json(resultado.rows[0]);
   } catch (error) {
@@ -44,10 +44,10 @@ router.get('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const { nombre, rol, telefono, email, turno } = req.body;
+    const { nombre, rol, telefono, email, turno, cedula } = req.body;
     const resultado = await db.query(
-      'UPDATE empleados SET nombre=$1, rol=$2, telefono=$3, email=$4, turno=$5 WHERE id=$6 RETURNING *',
-      [nombre, rol, telefono, email, turno, id]
+      'UPDATE empleados SET nombre=$1, rol=$2, telefono=$3, email=$4, turno=$5, cedula=$6 WHERE id=$7 RETURNING *',
+      [nombre, rol, telefono, email, turno, cedula, id]
     );
     res.json(resultado.rows[0]);
   } catch (error) {
