@@ -1,0 +1,346 @@
+.inicio {
+  font-family: 'Arial', sans-serif;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #003087, #001a4d);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="40" fill="rgba(255,215,0,0.05)"/><circle cx="80" cy="80" r="40" fill="rgba(255,215,0,0.05)"/></svg>');
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-contenido h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #FFD700;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  letter-spacing: 2px;
+}
+
+.hero-contenido p {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+.btn-hero {
+  background: #FFD700;
+  color: #003087;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+  display: inline-block;
+}
+
+.btn-hero:hover {
+  background: #003087;
+  color: #FFD700;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,48,135,0.4);
+}
+
+/* SERVICIOS */
+.servicios {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: #f4f4f4;
+}
+
+.servicios h2 {
+  font-size: 2.2rem;
+  color: #003087;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.servicios h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #FFD700;
+  margin: 0.8rem auto 2.5rem;
+  border-radius: 2px;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.servicio-card {
+  background: white;
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s;
+  border-bottom: 4px solid #FFD700;
+}
+
+.servicio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,48,135,0.15);
+}
+
+.servicio-card span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.servicio-card h3 {
+  color: #003087;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+}
+
+.servicio-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* PRESUPUESTO */
+.seccion-presupuesto {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: #003087;
+}
+
+.seccion-presupuesto h2 {
+  font-size: 2.2rem;
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.seccion-presupuesto h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #FFD700;
+  margin: 0.8rem auto 0.5rem;
+  border-radius: 2px;
+}
+
+.seccion-presupuesto > p {
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+}
+
+.form-presupuesto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.form-presupuesto input,
+.form-presupuesto textarea {
+  padding: 0.9rem 1.2rem;
+  border: 2px solid rgba(255,215,0,0.3);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  transition: border 0.3s;
+}
+
+.form-presupuesto input::placeholder,
+.form-presupuesto textarea::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.form-presupuesto input:focus,
+.form-presupuesto textarea:focus {
+  outline: none;
+  border-color: #FFD700;
+  background: rgba(255,255,255,0.15);
+}
+
+.form-presupuesto button {
+  padding: 1rem;
+  background: #FFD700;
+  color: #003087;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+}
+
+.form-presupuesto button:hover {
+  background: #FFC300;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255,215,0,0.4);
+}
+
+/* CONTACTO */
+.contacto {
+  padding: 5rem 2rem;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.contacto h2 {
+  font-size: 2.2rem;
+  color: #003087;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.contacto h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #FFD700;
+  margin: 0.8rem auto 2.5rem;
+  border-radius: 2px;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contacto-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+  padding: 1.2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  border-left: 4px solid #FFD700;
+}
+
+.contacto-item span {
+  font-size: 2rem;
+}
+
+.contacto-item h4 {
+  color: #003087;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.contacto-item a {
+  color: #003087;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contacto-item a:hover {
+  color: #FFD700;
+}
+
+.contacto-item p {
+  color: #555;
+}
+
+.mapa {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  border: 3px solid #FFD700;
+}
+
+/* WHATSAPP FLOTANTE */
+.whatsapp-flotante {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  transition: transform 0.3s;
+  filter: drop-shadow(0 4px 15px rgba(37,211,102,0.5));
+}
+
+.whatsapp-flotante:hover {
+  transform: scale(1.15);
+}
+
+.whatsapp-flotante img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #003087;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.navbar-marca {
+  color: #FFD700;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+
+.navbar-links a:hover {
+  color: #FFD700;
+}
+.whatsapp-flotante {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+
+.whatsapp-flotante:hover {
+  transform: scale(1.15);
+}

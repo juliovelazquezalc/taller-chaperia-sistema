@@ -10,6 +10,7 @@ const empleadosRoutes = require('./routes/empleados');
 const ordenesRoutes = require('./routes/ordenes');
 const articulosRoutes = require('./routes/articulos');
 const facturasRoutes = require('./routes/facturas');
+const authRoutes = require('./routes/auth');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -19,6 +20,7 @@ app.use(cors());
 app.use(express.json());
 
 // Usar rutas
+app.use('/auth', authRoutes);
 app.use('/clientes', clientesRoutes);
 app.use('/vehiculos', vehiculosRoutes);
 app.use('/empleados', empleadosRoutes);
