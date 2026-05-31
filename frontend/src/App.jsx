@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Inicio from './pages/Inicio'
 import Login from './pages/Login'
+import Dashboard from './pages/Dashboard'
 import Clientes from './pages/Clientes'
 import Vehiculos from './pages/Vehiculos'
 import Empleados from './pages/Empleados'
@@ -40,7 +41,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<><Navbar usuario={usuario} onLogout={handleLogout} /><Inicio /></>} />
-        <Route path="/login" element={usuario ? <Navigate to="/clientes" /> : <Login onLogin={handleLogin} />} />
+        <Route path="/login" element={usuario ? <Navigate to="/dashboard" /> : <Login onLogin={handleLogin} />} />
+        <Route path="/dashboard" element={<PrivateRoute elemento={<Dashboard />} />} />
         <Route path="/clientes" element={<PrivateRoute elemento={<Clientes />} />} />
         <Route path="/vehiculos" element={<PrivateRoute elemento={<Vehiculos />} />} />
         <Route path="/empleados" element={<PrivateRoute elemento={<Empleados />} />} />

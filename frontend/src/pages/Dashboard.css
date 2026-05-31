@@ -1,0 +1,131 @@
+.dash-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.dash-card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  color: white;
+}
+
+.dash-card.azul { background: #003087; }
+.dash-card.verde { background: #0F6E56; }
+.dash-card.dorado { background: #854F0B; }
+.dash-card.rojo { background: #A32D2D; }
+
+.dash-label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.dash-val {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.dash-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.dash-seccion {
+  background: white;
+  border: 0.5px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.dash-seccion h2 {
+  color: #003087;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #FFD700;
+}
+
+.dash-ordenes-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.orden-stat {
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.orden-stat-num {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.orden-stat-label {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.dash-orden-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 0.5px solid #e0e0e0;
+}
+
+.dash-orden-item:last-child {
+  border-bottom: none;
+}
+
+.dash-orden-cliente {
+  font-weight: bold;
+  color: #003087;
+  font-size: 0.95rem;
+}
+
+.dash-orden-detalle {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.dash-orden-desc {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.dash-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.dash-caja {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.dash-caja-item {
+  padding: 1.2rem;
+  border-radius: 8px;
+  color: white;
+}
+
+.dash-caja-item.verde { background: #0F6E56; }
+.dash-caja-item.rojo { background: #A32D2D; }
+.dash-caja-item.azul { background: #003087; }
+.dash-caja-item.naranja { background: #854F0B; }
+
+.dash-caja-val {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
