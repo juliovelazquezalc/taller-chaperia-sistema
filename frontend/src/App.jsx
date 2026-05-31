@@ -9,6 +9,9 @@ import Empleados from './pages/Empleados'
 import Ordenes from './pages/Ordenes'
 import Articulos from './pages/Articulos'
 import Facturas from './pages/Facturas'
+import Caja from './pages/Caja'
+import Proveedores from './pages/Proveedores'
+import Pagos from './pages/Pagos'
 import './App.css'
 
 function App() {
@@ -17,9 +20,7 @@ function App() {
     return u ? JSON.parse(u) : null
   })
 
-  const handleLogin = (u) => {
-    setUsuario(u)
-  }
+  const handleLogin = (u) => setUsuario(u)
 
   const handleLogout = () => {
     localStorage.removeItem('token')
@@ -27,23 +28,28 @@ function App() {
     setUsuario(null)
   }
 
+  const PrivateRoute = ({ elemento }) => {
+    return usuario ? (
+      <><Navbar usuario={usuario} onLogout={handleLogout} />{elemento}</>
+    ) : (
+      <Navigate to="/login" />
+    )
+  }
+
   return (
     <BrowserRouter>
       <Routes>
-        {/* Ruta pública */}
         <Route path="/" element={<><Navbar usuario={usuario} onLogout={handleLogout} /><Inicio /></>} />
-
-        {/* Login */}
-        <Route path="/login" element={usuario ? <Navigate to="/dashboard" /> : <Login onLogin={handleLogin} />} />
-
-        {/* Rutas privadas */}
-        <Route path="/dashboard" element={usuario ? <><Navbar usuario={usuario} onLogout={handleLogout} /><h2 style={{padding:'2rem'}}>Bienvenido, {usuario.nombre}</h2></> : <Navigate to="/login" />} />
-        <Route path="/clientes" element={usuario ? <><Navbar usuario={usuario} onLogout={handleLogout} /><Clientes /></> : <Navigate to="/login" />} />
-        <Route path="/vehiculos" element={usuario ? <><Navbar usuario={usuario} onLogout={handleLogout} /><Vehiculos /></> : <Navigate to="/login" />} />
-        <Route path="/empleados" element={usuario ? <><Navbar usuario={usuario} onLogout={handleLogout} /><Empleados /></> : <Navigate to="/login" />} />
-        <Route path="/ordenes" element={usuario ? <><Navbar usuario={usuario} onLogout={handleLogout} /><Ordenes /></> : <Navigate to="/login" />} />
-        <Route path="/articulos" element={usuario ? <><Navbar usuario={usuario} onLogout={handleLogout} /><Articulos /></> : <Navigate to="/login" />} />
-        <Route path="/facturas" element={usuario ? <><Navbar usuario={usuario} onLogout={handleLogout} /><Facturas /></> : <Navigate to="/login" />} />
+        <Route path="/login" element={usuario ? <Navigate to="/clientes" /> : <Login onLogin={handleLogin} />} />
+        <Route path="/clientes" element={<PrivateRoute elemento={<Clientes />} />} />
+        <Route path="/vehiculos" element={<PrivateRoute elemento={<Vehiculos />} />} />
+        <Route path="/empleados" element={<PrivateRoute elemento={<Empleados />} />} />
+        <Route path="/ordenes" element={<PrivateRoute elemento={<Ordenes />} />} />
+        <Route path="/articulos" element={<PrivateRoute elemento={<Articulos />} />} />
+        <Route path="/facturas" element={<PrivateRoute elemento={<Facturas />} />} />
+        <Route path="/caja" element={<PrivateRoute elemento={<Caja />} />} />
+        <Route path="/proveedores" element={<PrivateRoute elemento={<Proveedores />} />} />
+        <Route path="/pagos" element={<PrivateRoute elemento={<Pagos />} />} />
       </Routes>
     </BrowserRouter>
   )

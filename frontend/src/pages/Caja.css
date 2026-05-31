@@ -1,0 +1,59 @@
+.caja-resumen {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.caja-card {
+  padding: 1.2rem;
+  border-radius: 10px;
+  color: white;
+}
+
+.caja-card.verde { background: #0F6E56; }
+.caja-card.azul { background: #003087; }
+.caja-card.rojo { background: #A32D2D; }
+.caja-card.naranja { background: #854F0B; }
+
+.caja-card-label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.caja-card-val {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.caja-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+}
+
+.metodos-pago {
+  background: #f5f5f5;
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.metodos-pago h2 {
+  color: #003087;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.metodo-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+.metodo-item:last-child {
+  border-bottom: none;
+}

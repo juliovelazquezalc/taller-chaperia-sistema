@@ -19,6 +19,9 @@ function Navbar({ usuario, onLogout }) {
             <Link to="/ordenes">Órdenes</Link>
             <Link to="/articulos">Artículos</Link>
             <Link to="/facturas">Facturas</Link>
+            <Link to="/caja">Caja</Link>
+            <Link to="/proveedores">Proveedores</Link>
+            <Link to="/pagos">Pagos</Link>
             <span style={{ color: '#FFD700' }}>| {usuario.nombre}</span>
             <button onClick={onLogout} style={{
               background: 'transparent',
@@ -38,4 +41,4 @@ function Navbar({ usuario, onLogout }) {
   )
 }
 
-export default Navbar 
+export default Navbar
