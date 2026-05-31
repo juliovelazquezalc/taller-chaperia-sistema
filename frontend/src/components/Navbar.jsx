@@ -32,9 +32,7 @@ function Navbar({ usuario, onLogout }) {
               Salir
             </button>
           </>
-        ) : (
-          <Link to="/login">Ingresar al Sistema</Link>
-        )}
+        ) : null}
       </div>
     </nav>
   )

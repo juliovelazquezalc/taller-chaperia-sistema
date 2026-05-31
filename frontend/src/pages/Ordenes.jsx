@@ -42,8 +42,29 @@ function Ordenes() {
     obtenerOrdenes()
   }
 
-  const cambiarEstado = async (id, estado) => {
+const cambiarEstado = async (id, estado) => {
+    // Buscar la orden ANTES de actualizar
+    const orden = ordenes.find(o => o.id === id)
+    
     await axios.patch(`http://localhost:3001/ordenes/${id}/estado`, { estado })
+    
+    // Mensaje cuando el trabajo está terminado
+    if (estado === 'terminada' && orden) {
+      const mensaje = `Hola ${orden.nombre_cliente}! 🔧 Te informamos que tu ${orden.marca} ${orden.modelo} (${orden.patente}) ya está listo para retirar en el Taller JMV. Cualquier consulta escribinos al +595 971 661 680. ¡Gracias por elegirnos!`
+      const url = `https://wa.me/?text=${encodeURIComponent(mensaje)}`
+      window.open(url, '_blank')
+    }
+
+    // Mensaje post entrega - 1 hora después
+    if (estado === 'entregado' && orden) {
+      const mensaje = `Hola ${orden.nombre_cliente}! 😊 Esperamos que estés satisfecho con el trabajo realizado en tu ${orden.marca} ${orden.modelo} en el Taller JMV. ¿Cómo quedó el vehículo? Tu opinión es muy importante para nosotros. ¡Gracias por tu confianza!`
+      alert('✅ El mensaje post entrega se enviará automáticamente en 1 hora.')
+      setTimeout(() => {
+        const url = `https://wa.me/?text=${encodeURIComponent(mensaje)}`
+        window.open(url, '_blank')
+      }, 3600000)
+    }
+
     obtenerOrdenes()
   }
 
