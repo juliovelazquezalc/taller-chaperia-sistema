@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Inicio from './pages/Inicio'
 import Login from './pages/Login'
-import Dashboard from './pages/Dashboard'
+import Dashboard from './pages/dashboard'
 import Clientes from './pages/Clientes'
 import Vehiculos from './pages/Vehiculos'
 import Empleados from './pages/Empleados'
@@ -13,6 +13,9 @@ import Facturas from './pages/Facturas'
 import Caja from './pages/Caja'
 import Proveedores from './pages/Proveedores'
 import Pagos from './pages/Pagos'
+import Aseguradoras from './pages/Aseguradoras'
+import Siniestros from './pages/Siniestros'
+import CobrosSeguro from './pages/CobrosSeguro'
 import './App.css'
 
 function App() {
@@ -52,6 +55,9 @@ function App() {
         <Route path="/caja" element={<PrivateRoute elemento={<Caja />} />} />
         <Route path="/proveedores" element={<PrivateRoute elemento={<Proveedores />} />} />
         <Route path="/pagos" element={<PrivateRoute elemento={<Pagos />} />} />
+        <Route path="/aseguradoras" element={<PrivateRoute elemento={<Aseguradoras />} />} />
+        <Route path="/siniestros" element={<PrivateRoute elemento={<Siniestros />} />} />
+        <Route path="/cobros-seguro" element={<PrivateRoute elemento={<CobrosSeguro />} />} />
       </Routes>
     </BrowserRouter>
   )

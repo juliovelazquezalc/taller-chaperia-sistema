@@ -1,17 +1,19 @@
 .navbar {
   background: #003087;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 100;
 }
 
 .navbar-marca {
   display: flex;
   align-items: center;
   color: #FFD700;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: bold;
   letter-spacing: 1px;
   text-decoration: none;
@@ -19,17 +21,66 @@
 
 .navbar-links {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .navbar-links a {
   color: white;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   transition: color 0.2s;
   font-weight: 500;
+  padding: 0.4rem 0.6rem;
 }
 
 .navbar-links a:hover {
   color: #FFD700;
+}
+
+.nav-grupo {
+  position: relative;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  transition: color 0.2s;
+}
+
+.nav-btn:hover {
+  color: #FFD700;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #002070;
+  border: 1px solid #FFD700;
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  min-width: 200px;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.nav-dropdown a:hover {
+  background: #003087;
+  color: #FFD700;
+  padding-left: 1.5rem;
 }

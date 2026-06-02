@@ -1,0 +1,82 @@
+.cobro-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: white;
+  border: 0.5px solid #e0e0e0;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #FFD700;
+}
+
+.cobro-aseguradora {
+  font-weight: bold;
+  color: #003087;
+  font-size: 1rem;
+}
+
+.cobro-detalle {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.3rem;
+}
+
+.cobro-cliente {
+  font-size: 0.85rem;
+  color: #999;
+  margin-top: 0.2rem;
+}
+
+.cobro-monto {
+  text-align: right;
+}
+
+.calendario {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.cal-header {
+  text-align: center;
+  font-weight: bold;
+  color: #003087;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  background: #E6F1FB;
+  border-radius: 5px;
+}
+
+.cal-dia {
+  min-height: 80px;
+  padding: 0.4rem;
+  border: 0.5px solid #e0e0e0;
+  border-radius: 5px;
+  background: white;
+}
+
+.cal-dia.vacio {
+  background: #f9f9f9;
+  border: none;
+}
+
+.cal-dia.con-cobros {
+  background: #FAEEDA;
+  border-color: #FFD700;
+}
+
+.cal-num {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.cal-cobro {
+  background: #003087;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-bottom: 2px;
+}

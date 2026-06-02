@@ -14,6 +14,9 @@ const authRoutes = require('./routes/auth');
 const cajaRoutes = require('./routes/caja');
 const proveedoresRoutes = require('./routes/proveedores');
 const pagosRoutes = require('./routes/pagos');
+const aseguradorasRoutes = require('./routes/aseguradoras');
+const siniestrosRoutes = require('./routes/siniestros');
+const cobrosSeguroRoutes = require('./routes/cobros_seguros');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -33,6 +36,9 @@ app.use('/facturas', facturasRoutes);
 app.use('/caja', cajaRoutes);
 app.use('/proveedores', proveedoresRoutes);
 app.use('/pagos', pagosRoutes);
+app.use('/aseguradoras', aseguradorasRoutes);
+app.use('/siniestros', siniestrosRoutes);
+app.use('/cobros-seguros', cobrosSeguroRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
