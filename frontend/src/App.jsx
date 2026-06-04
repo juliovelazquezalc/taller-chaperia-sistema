@@ -16,6 +16,7 @@ import Pagos from './pages/Pagos'
 import Aseguradoras from './pages/Aseguradoras'
 import Siniestros from './pages/Siniestros'
 import CobrosSeguro from './pages/CobrosSeguro'
+import PresupuestoSeguro from './pages/PresupuestoSeguro'
 import './App.css'
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
         <Route path="/aseguradoras" element={<PrivateRoute elemento={<Aseguradoras />} />} />
         <Route path="/siniestros" element={<PrivateRoute elemento={<Siniestros />} />} />
         <Route path="/cobros-seguro" element={<PrivateRoute elemento={<CobrosSeguro />} />} />
+        <Route path="/presupuestos-seguro" element={<PrivateRoute elemento={<PresupuestoSeguro />} />} />
       </Routes>
     </BrowserRouter>
   )

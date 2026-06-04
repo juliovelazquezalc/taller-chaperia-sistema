@@ -82,6 +82,7 @@ function Navbar({ usuario, onLogout }) {
               <div className="nav-dropdown">
                 <Link to="/aseguradoras" onClick={cerrarMenus}>Aseguradoras</Link>
                 <Link to="/siniestros" onClick={cerrarMenus}>Siniestros</Link>
+                <Link to="/presupuestos-seguro" onClick={cerrarMenus}>Presupuestos</Link>
                 <Link to="/cobros-seguro" onClick={cerrarMenus}>Control de cobros</Link>
               </div>
             )}

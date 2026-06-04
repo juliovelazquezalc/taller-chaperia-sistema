@@ -1,0 +1,190 @@
+.presupuesto-doc {
+  background: white;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 1rem;
+  max-width: 900px;
+}
+
+.pres-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #003087;
+}
+
+.pres-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pres-logo h2 {
+  color: #003087;
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.pres-logo p {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 0.1rem 0;
+}
+
+.pres-titulo {
+  text-align: right;
+}
+
+.pres-titulo h1 {
+  color: #003087;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+}
+
+.pres-titulo p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.pres-datos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.pres-datos-col h3 {
+  color: #003087;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #FFD700;
+  padding-bottom: 0.3rem;
+}
+
+.pres-datos-col p {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0.2rem 0;
+}
+
+.pres-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.pres-tabla th {
+  background: #003087;
+  color: #FFD700;
+  padding: 0.7rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.pres-tabla td {
+  padding: 0.6rem;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+.pres-tabla tr:hover {
+  background: #f9f9f9;
+}
+
+.pres-input {
+  width: 100%;
+  padding: 0.4rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.pres-input-sm {
+  width: 60px;
+}
+
+.pres-totales {
+  margin-left: auto;
+  width: 300px;
+  margin-bottom: 1.5rem;
+}
+
+.pres-total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #eee;
+}
+
+.pres-total-final {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #003087;
+  border-bottom: 3px solid #003087;
+  padding-top: 0.5rem;
+}
+
+.pres-obs {
+  margin-bottom: 2rem;
+}
+
+.pres-obs h3 {
+  color: #003087;
+  margin-bottom: 0.5rem;
+}
+
+.pres-firma {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+}
+
+.firma-box {
+  text-align: center;
+  width: 200px;
+}
+
+.firma-linea {
+  border-bottom: 2px solid #333;
+  margin-bottom: 0.5rem;
+  height: 50px;
+}
+
+.firma-box p {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0.2rem 0;
+}
+
+.pres-acciones {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .navbar {
+    display: none !important;
+  }
+  .pagina {
+    padding: 0 !important;
+  }
+  .presupuesto-doc {
+    border: none;
+    padding: 0;
+  }
+}

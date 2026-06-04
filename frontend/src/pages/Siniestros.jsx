@@ -47,14 +47,16 @@ function Siniestros() {
     setVehiculosFiltrados([])
     obtenerTodo()
   }
-
   const cambiarEstado = async (id, estado) => {
-    await axios.patch(`http://localhost:3001/siniestros/${id}/estado`, { estado })
-    obtenerTodo()
-  }
+    await axios.patch(`http://localhost:3001/siniestros/${id}/estado`, { estado }) 
+    if (estado === 'aprobado') {
+      const siniestro = siniestros.find(s => s.id === id)
+      const confirmar = window.confirm(`El siniestro de ${siniestro.nombre_cliente} fue aprobado. ¿Querés registrar el cobro ahora?`)
+      if (confirmar) {
+        window.location.href = '/cobros-seguro'
+      }
+    }
 
-  const eliminar = async (id) => {
-    await axios.delete(`http://localhost:3001/siniestros/${id}`)
     obtenerTodo()
   }
 
