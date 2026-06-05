@@ -19,10 +19,10 @@ function Siniestros() {
 
   const obtenerTodo = async () => {
     const [s, c, v, a] = await Promise.all([
-      axios.get('http://localhost:3001/siniestros'),
-      axios.get('http://localhost:3001/clientes'),
-      axios.get('http://localhost:3001/vehiculos'),
-      axios.get('http://localhost:3001/aseguradoras')
+      axios.get('http://192.168.100.12:3001/siniestros'),
+      axios.get('http://192.168.100.12:3001/clientes'),
+      axios.get('http://192.168.100.12:3001/vehiculos'),
+      axios.get('http://192.168.100.12:3001/aseguradoras')
     ])
     setSiniestros(s.data)
     setClientes(c.data)
@@ -42,13 +42,13 @@ function Siniestros() {
 
   const agregarSiniestro = async (e) => {
     e.preventDefault()
-    await axios.post('http://localhost:3001/siniestros', formulario)
+    await axios.post('http://192.168.100.12:3001/siniestros', formulario)
     setFormulario({ numero_siniestro: '', cliente_id: '', vehiculo_id: '', aseguradora_id: '', descripcion: '', estado: 'ingresado', fecha_ingreso: '' })
     setVehiculosFiltrados([])
     obtenerTodo()
   }
   const cambiarEstado = async (id, estado) => {
-    await axios.patch(`http://localhost:3001/siniestros/${id}/estado`, { estado }) 
+    await axios.patch(`http://192.168.100.12:3001/siniestros/${id}/estado`, { estado }) 
     if (estado === 'aprobado') {
       const siniestro = siniestros.find(s => s.id === id)
       const confirmar = window.confirm(`El siniestro de ${siniestro.nombre_cliente} fue aprobado. ¿Querés registrar el cobro ahora?`)

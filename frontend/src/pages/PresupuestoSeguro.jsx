@@ -20,8 +20,8 @@ function PresupuestoSeguro() {
 
   const obtenerTodo = async () => {
     const [s, p] = await Promise.all([
-      axios.get('http://localhost:3001/siniestros'),
-      axios.get('http://localhost:3001/presupuestos-seguro')
+      axios.get('http://192.168.100.12:3001/siniestros'),
+      axios.get('http://192.168.100.12:3001/presupuestos-seguro')
     ])
     setSiniestros(s.data)
     setPresupuestos(p.data)
@@ -55,7 +55,7 @@ function PresupuestoSeguro() {
 
   const guardarPresupuesto = async () => {
     if (!siniestroSeleccionado) return alert('Seleccioná un siniestro')
-    await axios.post('http://localhost:3001/presupuestos-seguro', {
+    await axios.post('http://192.168.100.12:3001/presupuestos-seguro', {
       siniestro_id: siniestroSeleccionado.id,
       aseguradora_id: siniestroSeleccionado.aseguradora_id,
       cliente_id: siniestroSeleccionado.cliente_id,

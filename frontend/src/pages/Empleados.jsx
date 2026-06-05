@@ -13,7 +13,7 @@ function Empleados() {
   }, [])
 
   const obtenerEmpleados = async () => {
-    const respuesta = await axios.get('http://localhost:3001/empleados')
+    const respuesta = await axios.get('http://192.168.100.12:3001/empleados')
     setEmpleados(respuesta.data)
   }
 
@@ -23,13 +23,13 @@ function Empleados() {
 
   const agregarEmpleado = async (e) => {
     e.preventDefault()
-    await axios.post('http://localhost:3001/empleados', formulario)
+    await axios.post('http://192.168.100.12:3001/empleados', formulario)
     setFormulario({ nombre: '', rol: '', telefono: '', email: '', turno: '', cedula: '' })
     obtenerEmpleados()
   }
 
   const eliminarEmpleado = async (id) => {
-    await axios.delete(`http://localhost:3001/empleados/${id}`)
+    await axios.delete(`http://192.168.100.12:3001/empleados/${id}`)
     obtenerEmpleados()
   }
 

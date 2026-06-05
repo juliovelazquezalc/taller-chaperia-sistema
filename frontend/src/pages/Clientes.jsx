@@ -14,7 +14,7 @@ function Clientes() {
   }, [])
 
   const obtenerClientes = async () => {
-    const respuesta = await axios.get('http://localhost:3001/clientes')
+    const respuesta = await axios.get('http://192.168.100.12:3001/clientes')
     setClientes(respuesta.data)
   }
 
@@ -24,13 +24,13 @@ function Clientes() {
 
   const agregarCliente = async (e) => {
     e.preventDefault()
-    await axios.post('http://localhost:3001/clientes', formulario)
+    await axios.post('http://192.168.100.12:3001/clientes', formulario)
     setFormulario({ nombre: '', telefono: '', email: '', direccion: '' })
     obtenerClientes()
   }
 
   const eliminarCliente = async (id) => {
-    await axios.delete(`http://localhost:3001/clientes/${id}`)
+    await axios.delete(`http://192.168.100.12:3001/clientes/${id}`)
     obtenerClientes()
   }
 

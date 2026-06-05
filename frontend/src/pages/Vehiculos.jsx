@@ -15,12 +15,12 @@ function Vehiculos() {
   }, [])
 
   const obtenerVehiculos = async () => {
-    const respuesta = await axios.get('http://localhost:3001/vehiculos')
+    const respuesta = await axios.get('http://192.168.100.12:3001/vehiculos')
     setVehiculos(respuesta.data)
   }
 
   const obtenerClientes = async () => {
-    const respuesta = await axios.get('http://localhost:3001/clientes')
+    const respuesta = await axios.get('http://192.168.100.12:3001/clientes')
     setClientes(respuesta.data)
   }
 
@@ -30,13 +30,13 @@ function Vehiculos() {
 
   const agregarVehiculo = async (e) => {
     e.preventDefault()
-    await axios.post('http://localhost:3001/vehiculos', formulario)
+    await axios.post('http://192.168.100.12:3001/vehiculos', formulario)
     setFormulario({ cliente_id: '', patente: '', marca: '', modelo: '', anio: '', color: '' })
     obtenerVehiculos()
   }
 
   const eliminarVehiculo = async (id) => {
-    await axios.delete(`http://localhost:3001/vehiculos/${id}`)
+    await axios.delete(`http://192.168.100.12:3001/vehiculos/${id}`)
     obtenerVehiculos()
   }
 

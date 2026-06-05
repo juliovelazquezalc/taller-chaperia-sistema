@@ -15,7 +15,7 @@ function Aseguradoras() {
   }, [])
 
   const obtenerAseguradoras = async () => {
-    const respuesta = await axios.get('http://localhost:3001/aseguradoras')
+    const respuesta = await axios.get('http://192.168.100.12:3001/aseguradoras')
     setAseguradoras(respuesta.data)
   }
 
@@ -26,10 +26,10 @@ function Aseguradoras() {
   const guardar = async (e) => {
     e.preventDefault()
     if (editando) {
-      await axios.put(`http://localhost:3001/aseguradoras/${editando}`, formulario)
+      await axios.put(`http://192.168.100.12:3001/aseguradoras/${editando}`, formulario)
       setEditando(null)
     } else {
-      await axios.post('http://localhost:3001/aseguradoras', formulario)
+      await axios.post('http://192.168.100.12:3001/aseguradoras', formulario)
     }
     setFormulario({ nombre: '', ruc: '', telefono: '', email: '', direccion: '', contacto_nombre: '', contacto_telefono: '', contacto_email: '' })
     obtenerAseguradoras()
@@ -46,7 +46,7 @@ function Aseguradoras() {
   }
 
   const eliminar = async (id) => {
-    await axios.delete(`http://localhost:3001/aseguradoras/${id}`)
+    await axios.delete(`http://192.168.100.12:3001/aseguradoras/${id}`)
     obtenerAseguradoras()
   }
 

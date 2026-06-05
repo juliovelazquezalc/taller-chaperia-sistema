@@ -27,10 +27,10 @@ function CobrosSeguro() {
 
   const obtenerTodo = async () => {
     const [c, p, a, s] = await Promise.all([
-      axios.get('http://localhost:3001/cobros-seguros'),
-      axios.get('http://localhost:3001/cobros-seguros/proximos'),
-      axios.get('http://localhost:3001/aseguradoras'),
-      axios.get('http://localhost:3001/siniestros')
+      axios.get('http://192.168.100.12:3001/cobros-seguros'),
+      axios.get('http://192.168.100.12:3001/cobros-seguros/proximos'),
+      axios.get('http://192.168.100.12:3001/aseguradoras'),
+      axios.get('http://192.168.100.12:3001/siniestros')
     ])
     setCobros(c.data)
     setProximos(p.data)
@@ -39,7 +39,7 @@ function CobrosSeguro() {
   }
 
   const obtenerCalendario = async () => {
-    const respuesta = await axios.get(`http://localhost:3001/cobros-seguros/calendario?mes=${mes}&anio=${anio}`)
+    const respuesta = await axios.get(`http://192.168.100.12:3001/cobros-seguros/calendario?mes=${mes}&anio=${anio}`)
     setCobrosCalendario(respuesta.data)
   }
 
@@ -50,13 +50,13 @@ function CobrosSeguro() {
 
   const agregarCobro = async (e) => {
     e.preventDefault()
-    await axios.post('http://localhost:3001/cobros-seguros', formulario)
+    await axios.post('http://192.168.100.12:3001/cobros-seguros', formulario)
     setFormulario({ siniestro_id: '', aseguradora_id: '', tipo_cobro: 'cheque', numero_cheque: '', monto: '', fecha_vencimiento: '', es_diferido: false, observaciones: '' })
     obtenerTodo()
   }
 
   const marcarCobrado = async (id) => {
-    await axios.patch(`http://localhost:3001/cobros-seguros/${id}/cobrar`)
+    await axios.patch(`http://192.168.100.12:3001/cobros-seguros/${id}/cobrar`)
     obtenerTodo()
   }
 

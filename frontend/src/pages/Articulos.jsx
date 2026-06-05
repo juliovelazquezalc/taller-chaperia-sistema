@@ -13,7 +13,7 @@ function Articulos() {
   }, [])
 
   const obtenerArticulos = async () => {
-    const respuesta = await axios.get('http://localhost:3001/articulos')
+    const respuesta = await axios.get('http://192.168.100.12:3001/articulos')
     setArticulos(respuesta.data)
   }
 
@@ -23,13 +23,13 @@ function Articulos() {
 
   const agregarArticulo = async (e) => {
     e.preventDefault()
-    await axios.post('http://localhost:3001/articulos', formulario)
+    await axios.post('http://192.168.100.12:3001/articulos', formulario)
     setFormulario({ nombre: '', descripcion: '', precio: '', stock: '' })
     obtenerArticulos()
   }
 
   const eliminarArticulo = async (id) => {
-    await axios.delete(`http://localhost:3001/articulos/${id}`)
+    await axios.delete(`http://192.168.100.12:3001/articulos/${id}`)
     obtenerArticulos()
   }
 

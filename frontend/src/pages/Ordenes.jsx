@@ -17,17 +17,17 @@ function Ordenes() {
   }, [])
 
   const obtenerOrdenes = async () => {
-    const respuesta = await axios.get('http://localhost:3001/ordenes')
+    const respuesta = await axios.get('http://192.168.100.12:3001/ordenes')
     setOrdenes(respuesta.data)
   }
 
   const obtenerVehiculos = async () => {
-    const respuesta = await axios.get('http://localhost:3001/vehiculos')
+    const respuesta = await axios.get('http://192.168.100.12:3001/vehiculos')
     setVehiculos(respuesta.data)
   }
 
   const obtenerEmpleados = async () => {
-    const respuesta = await axios.get('http://localhost:3001/empleados')
+    const respuesta = await axios.get('http://192.168.100.12:3001/empleados')
     setEmpleados(respuesta.data)
   }
 
@@ -37,7 +37,7 @@ function Ordenes() {
 
   const agregarOrden = async (e) => {
     e.preventDefault()
-    await axios.post('http://localhost:3001/ordenes', formulario)
+    await axios.post('http://192.168.100.12:3001/ordenes', formulario)
     setFormulario({ vehiculo_id: '', empleado_id: '', descripcion: '', estado: 'pendiente', total: '' })
     obtenerOrdenes()
   }
@@ -46,7 +46,7 @@ const cambiarEstado = async (id, estado) => {
     // Buscar la orden ANTES de actualizar
     const orden = ordenes.find(o => o.id === id)
     
-    await axios.patch(`http://localhost:3001/ordenes/${id}/estado`, { estado })
+    await axios.patch(`http://192.168.100.12:3001/ordenes/${id}/estado`, { estado })
     
     // Mensaje cuando el trabajo está terminado
     if (estado === 'terminada' && orden) {
@@ -69,7 +69,7 @@ const cambiarEstado = async (id, estado) => {
   }
 
   const eliminarOrden = async (id) => {
-    await axios.delete(`http://localhost:3001/ordenes/${id}`)
+    await axios.delete(`http://192.168.100.12:3001/ordenes/${id}`)
     obtenerOrdenes()
   }
 

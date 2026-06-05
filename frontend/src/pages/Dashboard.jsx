@@ -26,12 +26,12 @@ function Dashboard() {
   const obtenerDatos = async () => {
     try {
       const [clientes, vehiculos, empleados, ordenesData, articulos, caja] = await Promise.all([
-        axios.get('http://localhost:3001/clientes'),
-        axios.get('http://localhost:3001/vehiculos'),
-        axios.get('http://localhost:3001/empleados'),
-        axios.get('http://localhost:3001/ordenes'),
-        axios.get('http://localhost:3001/articulos'),
-        axios.get('http://localhost:3001/caja/resumen')
+        axios.get('http://192.168.100.12:3001/clientes'),
+        axios.get('http://192.168.100.12:3001/vehiculos'),
+        axios.get('http://192.168.100.12:3001/empleados'),
+        axios.get('http://192.168.100.12:3001/ordenes'),
+        axios.get('http://192.168.100.12:3001/articulos'),
+        axios.get('http://192.168.100.12:3001/caja/resumen')
       ])
 
       const pendientes = ordenesData.data.filter(o => o.estado === 'pendiente').length
