@@ -81,10 +81,10 @@ router.put('/:id', async (req, res) => {
 router.patch('/:id/estado', async (req, res) => {
   try {
     const { id } = req.params;
-    const { estado } = req.body;
+    const { estado, numero_siniestro, fecha_aprobacion } = req.body;
     const resultado = await db.query(
-      'UPDATE presupuestos_seguro SET estado=$1 WHERE id=$2 RETURNING *',
-      [estado, id]
+      'UPDATE presupuestos_seguro SET estado=$1, numero_siniestro=$2, fecha_aprobacion=$3 WHERE id=$4 RETURNING *',
+      [estado, numero_siniestro, fecha_aprobacion, id]
     );
     res.json(resultado.rows[0]);
   } catch (error) {

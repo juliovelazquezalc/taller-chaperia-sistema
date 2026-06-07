@@ -15,12 +15,12 @@ function Facturas() {
   }, [])
 
   const obtenerFacturas = async () => {
-    const respuesta = await axios.get('http://192.168.100.12:3001/facturas')
+    const respuesta = await axios.get('http://192.168.100.66:3001/facturas')
     setFacturas(respuesta.data)
   }
 
   const obtenerOrdenes = async () => {
-    const respuesta = await axios.get('http://192.168.100.12:3001/ordenes')
+    const respuesta = await axios.get('http://192.168.100.66:3001/ordenes')
     setOrdenes(respuesta.data.filter(o => o.estado !== 'terminada'))
   }
 
@@ -30,14 +30,14 @@ function Facturas() {
 
   const agregarFactura = async (e) => {
     e.preventDefault()
-    await axios.post('http://192.168.100.12:3001/facturas', formulario)
+    await axios.post('http://192.168.100.66:3001/facturas', formulario)
     setFormulario({ orden_id: '', total: '' })
     obtenerFacturas()
     obtenerOrdenes()
   }
 
   const eliminarFactura = async (id) => {
-    await axios.delete(`http://192.168.100.12:3001/facturas/${id}`)
+    await axios.delete(`http://192.168.100.66:3001/facturas/${id}`)
     obtenerFacturas()
   }
 

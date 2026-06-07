@@ -13,7 +13,7 @@ function Proveedores() {
   }, [])
 
   const obtenerProveedores = async () => {
-    const respuesta = await axios.get('http://192.168.100.12:3001/proveedores')
+    const respuesta = await axios.get('http://192.168.100.66:3001/proveedores')
     setProveedores(respuesta.data)
   }
 
@@ -23,13 +23,13 @@ function Proveedores() {
 
   const agregarProveedor = async (e) => {
     e.preventDefault()
-    await axios.post('http://192.168.100.12:3001/proveedores', formulario)
+    await axios.post('http://192.168.100.66:3001/proveedores', formulario)
     setFormulario({ nombre: '', telefono: '', email: '', ruc: '', direccion: '' })
     obtenerProveedores()
   }
 
   const eliminarProveedor = async (id) => {
-    await axios.delete(`http://192.168.100.12:3001/proveedores/${id}`)
+    await axios.delete(`http://192.168.100.66:3001/proveedores/${id}`)
     obtenerProveedores()
   }
 

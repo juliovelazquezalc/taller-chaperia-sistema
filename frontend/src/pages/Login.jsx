@@ -16,7 +16,7 @@ function Login({ onLogin }) {
     setCargando(true)
     setError('')
     try {
-      const respuesta = await axios.post('http://192.168.100.12:3001/auth/login', formulario)
+      const respuesta = await axios.post('http://192.168.100.66:3001/auth/login', formulario)
       localStorage.setItem('token', respuesta.data.token)
       localStorage.setItem('usuario', JSON.stringify(respuesta.data.usuario))
       onLogin(respuesta.data.usuario)

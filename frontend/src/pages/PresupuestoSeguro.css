@@ -1,36 +1,43 @@
 .presupuesto-doc {
   background: white;
-  padding: 2rem;
+  padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 10px;
   margin-top: 1rem;
-  max-width: 900px;
+  width: 100%;
+  overflow-x: auto;
 }
 
 .pres-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 3px solid #003087;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .pres-logo {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
+}
+
+.pres-logo img {
+  height: 60px;
 }
 
 .pres-logo h2 {
   color: #003087;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 0.2rem;
 }
 
 .pres-logo p {
   color: #666;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   margin: 0.1rem 0;
 }
 
@@ -40,38 +47,38 @@
 
 .pres-titulo h1 {
   color: #003087;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 3px;
   margin-bottom: 0.5rem;
 }
 
 .pres-titulo p {
   color: #666;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .pres-datos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
   background: #f9f9f9;
-  padding: 1rem;
+  padding: 0.8rem;
   border-radius: 8px;
 }
 
 .pres-datos-col h3 {
   color: #003087;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   border-bottom: 2px solid #FFD700;
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.2rem;
 }
 
 .pres-datos-col p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #333;
   margin: 0.2rem 0;
 }
@@ -80,20 +87,19 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 1rem;
+  font-size: 0.85rem;
 }
 
 .pres-tabla th {
   background: #003087;
   color: #FFD700;
-  padding: 0.7rem;
+  padding: 0.6rem;
   text-align: left;
-  font-size: 0.9rem;
 }
 
 .pres-tabla td {
-  padding: 0.6rem;
+  padding: 0.5rem;
   border-bottom: 1px solid #eee;
-  font-size: 0.9rem;
 }
 
 .pres-tabla tr:hover {
@@ -105,16 +111,17 @@
   padding: 0.4rem;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .pres-input-sm {
-  width: 60px;
+  width: 55px;
 }
 
 .pres-totales {
   margin-left: auto;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   margin-bottom: 1.5rem;
 }
 
@@ -122,12 +129,12 @@
   display: flex;
   justify-content: space-between;
   padding: 0.4rem 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   border-bottom: 1px solid #eee;
 }
 
 .pres-total-final {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #003087;
   border-bottom: 3px solid #003087;
@@ -135,23 +142,26 @@
 }
 
 .pres-obs {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .pres-obs h3 {
   color: #003087;
   margin-bottom: 0.5rem;
+  font-size: 0.95rem;
 }
 
 .pres-firma {
   display: flex;
   justify-content: space-around;
-  margin-top: 3rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .firma-box {
   text-align: center;
-  width: 200px;
+  width: 180px;
 }
 
 .firma-linea {
@@ -161,16 +171,57 @@
 }
 
 .firma-box p {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #666;
   margin: 0.2rem 0;
 }
 
 .pres-acciones {
   display: flex;
-  gap: 1rem;
+  gap: 0.8rem;
   margin-top: 1.5rem;
   flex-wrap: wrap;
+}
+
+.pres-acciones button {
+  flex: 1;
+  min-width: 140px;
+}
+
+@media (max-width: 768px) {
+  .pres-datos {
+    grid-template-columns: 1fr;
+  }
+
+  .pres-header {
+    flex-direction: column;
+  }
+
+  .pres-titulo {
+    text-align: left;
+  }
+
+  .pres-totales {
+    max-width: 100%;
+  }
+
+  .pres-tabla {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .pres-acciones {
+    flex-direction: column;
+  }
+
+  .pres-acciones button {
+    width: 100%;
+  }
+
+  .firma-box {
+    width: 140px;
+  }
 }
 
 @media print {

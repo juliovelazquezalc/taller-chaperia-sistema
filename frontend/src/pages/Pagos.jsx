@@ -21,10 +21,10 @@ function Pagos() {
 
   const obtenerTodo = async () => {
     const [pp, pe, prov, emp] = await Promise.all([
-      axios.get('http://192.168.100.12:3001/pagos/proveedores'),
-      axios.get('http://192.168.100.12:3001/pagos/empleados'),
-      axios.get('http://192.168.100.12:3001/proveedores'),
-      axios.get('http://192.168.100.12:3001/empleados')
+      axios.get('http://192.168.100.66:3001/pagos/proveedores'),
+      axios.get('http://192.168.100.66:3001/pagos/empleados'),
+      axios.get('http://192.168.100.66:3001/proveedores'),
+      axios.get('http://192.168.100.66:3001/empleados')
     ])
     setPagosProveedores(pp.data)
     setPagosEmpleados(pe.data)
@@ -34,14 +34,14 @@ function Pagos() {
 
   const pagarProveedor = async (e) => {
     e.preventDefault()
-    await axios.post('http://192.168.100.12:3001/pagos/proveedores', formularioProveedor)
+    await axios.post('http://192.168.100.66:3001/pagos/proveedores', formularioProveedor)
     setFormularioProveedor({ proveedor_id: '', descripcion: '', monto: '', metodo_pago: 'efectivo', estado: 'pagado' })
     obtenerTodo()
   }
 
   const pagarEmpleado = async (e) => {
     e.preventDefault()
-    await axios.post('http://192.168.100.12:3001/pagos/empleados', formularioEmpleado)
+    await axios.post('http://192.168.100.66:3001/pagos/empleados', formularioEmpleado)
     setFormularioEmpleado({ empleado_id: '', concepto: 'sueldo', monto: '', metodo_pago: 'efectivo', periodo: '', estado: 'pagado' })
     obtenerTodo()
   }
